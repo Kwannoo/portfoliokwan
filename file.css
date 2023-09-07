@@ -81,7 +81,7 @@ nav ul li a {
 /* Initial styles for sections */
 .fade-in-section {
     opacity: 0;
-    transition: opacity 0.5s ease; /* Add a smooth transition */
+    transition: opacity 0.3s ease; /* Add a smooth transition */
     margin-bottom: 200px;
 }
 
@@ -160,7 +160,7 @@ footer {
 }
 
 .enlarged-image {
-    width: 80%; /* Adjust the width percentage as needed */
+    width: 100%; /* Adjust the width percentage as needed */
     max-width: 800px; /* Set a maximum width to maintain image quality */
     height: auto; /* Maintain the aspect ratio */
 }
@@ -178,7 +178,9 @@ footer {
     position: relative;
 }
 
-
+ul li a {
+    font-size: 24px; /* Adjust the font size as needed */
+}
 
 .world-map img{
     width: 100%;
@@ -263,32 +265,34 @@ footer {
 }
 
 .malaysia {
-    top: 70%;
+    top: 63%;
     left: 73.5%;
 }
 
-.malaysia {
-    top: 54%;
-    left: 76.5%;
+.indonesia {
+    top: 70%;
+    left: 77.5%;
 }
+
+
 /* Style for the Skills section */
 #skills {
     display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: space-between;
-    align-items: flex-start;    
-
+    align-items: flex-start;
 }
 
+/* The rest of your CSS styles for h2 and h3 remain the same */
 h2 {
-    text-align: center; /* Center the title horizontally */
-    margin-top: 0px; /* Adjust the margin as needed for spacing */
+    text-align: center;
+    margin-top: 0px;
 }
 
 h3 {
-    text-align: center; /* Center the title horizontally */
-    margin-top: 20px; /* Adjust the margin as needed for spacing */
+    text-align: center;
+    margin-top: 20px;
     font-size: 32px;
 }
 
@@ -473,19 +477,23 @@ p {
     height: auto;
 }
 
-.about-image-left {
+#hobbies {
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+.hobbies-image-left {
     flex: 1; /* Allow the image to grow and occupy available space */
     max-width: 150%; /* Adjust the maximum width of the image */
     height: auto; /* Maintain the aspect ratio */
     margin-right: 20px; /* Adjust the margin as needed for spacing */
 }
 
-.about-image-left img {
+.hobbies-image-left img {
     width: 100%; /* Ensure the image takes up the entire container width */
     height: auto; /* Maintain aspect ratio */
     max-height: 100%; /* Ensure it doesn't exceed the container's height */
 }
-
 
 .about-content {
     flex: 2; /* Allow the content to grow and occupy available space */
