@@ -1,0 +1,492 @@
+/* styles.css */
+
+/* Reset some default styles for consistency */
+body, h1, h2, h3, ul, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    background-color: #022c47cc;
+    overflow-x: hidden; /* Prevent horizontal scroll due to background image */
+}
+
+.background-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the background layer behind the content */
+    background-image: url("background.jpg"); /* Replace with the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    max-width: 20%; /* Set the maximum width to occupy 80% of the screen */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: rgba(4, 30, 78, 0.8);
+    color: #ac1313;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1; /* Place the header above the background layer */
+}
+
+/* Style the logo */
+.logo {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Initial styles for sections */
+.fade-in-section {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Add a smooth transition */
+    margin-bottom: 200px;
+}
+
+/* Style for the specific custom-exception class */
+.custom-exception {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Add a smooth transition */
+    margin-bottom: 0px;
+    /* Your exception styles here */
+}
+
+/* Style the logo button */
+.button-container {
+    display: flex;
+    align-items: center; /* Align buttons vertically with the logo */
+}
+
+/* Style the logo button */
+.logo-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 50px; /* Set the button width to match the logo's width */
+    height: 50px; /* Set the button height to match the logo's height */
+    text-align: center; /* Center the image horizontally */
+}
+
+.logo-button img {
+    width: 60%; /* Set the image width to 100% of the button */
+    height: auto; /* Maintain aspect ratio */
+}
+
+main {
+    max-width: 60%; /* Set the maximum width to occupy 80% of the screen */
+    margin:  auto;
+    padding:100px;
+    background-color: #ffffff; /* White background for content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+#about {
+    display: flex;
+    align-items: center; /* Center content vertically */
+    padding-top: 20px;
+    padding-bottom: 300px;
+}
+
+/* Style for the About section */
+.about-content {
+    
+    font-size: 48px;
+    flex: 1;
+    padding: 2rem;
+}
+
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Keep aligning content to the right */
+    padding: 2rem 0.5rem 2rem 1rem; /* Adjust the padding to move the image closer to the text */
+    order: 2; /* Keep the order of this element in the flex container */
+}
+
+.about-image img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+}
+
+.enlarged-image {
+    width: 80%; /* Adjust the width percentage as needed */
+    max-width: 800px; /* Set a maximum width to maintain image quality */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+.about-text {
+    font-size: 24px;
+}
+
+/* World map */
+.world-map {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1em;
+    position: relative;
+}
+
+
+
+.world-map img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* padding-bottom: 200px; */
+}
+
+.map-title {
+    text-align: center;
+    margin: 2em 0;
+    padding: 0 1em;
+}
+
+.pin {
+    background: #4362f8;
+    position: absolute;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+}
+
+.pin::before {
+    content: '';
+    background: #4362f8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 1.3s ease-in-out infinite;
+}
+
+.pin span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    border-radius: 3em;
+    padding: 0.3em 0.6em;
+    font-size: 0.9em;
+}
+
+.usa {
+    top: 50%;
+    left: 21%;
+}
+
+.france {
+    top: 46%;
+    left: 48%;
+}
+
+.netherlands {
+    top: 43%;
+    left: 48%;
+}
+
+.germany {
+    top: 43%;
+    left: 50%;
+}
+
+.thailand {
+    top: 60%;
+    left: 73.5%;
+}
+
+.italy {
+    top: 49%;
+    left: 50.5%;
+}
+
+.hongkong {
+    top: 54%;
+    left: 77.5%;
+}
+
+.malaysia {
+    top: 70%;
+    left: 73.5%;
+}
+
+.malaysia {
+    top: 54%;
+    left: 76.5%;
+}
+/* Style for the Skills section */
+#skills {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: flex-start;    
+
+}
+
+h2 {
+    text-align: center; /* Center the title horizontally */
+    margin-top: 0px; /* Adjust the margin as needed for spacing */
+}
+
+h3 {
+    text-align: center; /* Center the title horizontally */
+    margin-top: 20px; /* Adjust the margin as needed for spacing */
+    font-size: 32px;
+}
+
+
+p {
+    text-align: center;
+}
+
+.skills-content h2 {
+    margin-bottom: 20px; /* Adjust the margin as needed for more whitespace */
+}
+
+
+.skills-content .Technologies .progress-container .progress-language {
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+
+.skills-content {
+    background-color: #F0F0F0; /* Set a background color for all divs */
+    padding: 80px; /* Add padding to create space inside each div */
+    margin-bottom: 20px; /* Add margin to create space between divs */
+    margin-left: 2px; /* Add margin to the left of each div */
+    margin-right: 2px; /* Add margin to the right of each div */
+}
+
+
+
+
+.skills-content ul {
+    
+    list-style: none;
+    padding: 0;
+}
+
+
+.skills-content li {
+    padding: 10px;
+    margin-bottom: 15px;
+    padding-left: 1rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.skills-content .Technologies {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    list-style: none; /* Remove default list styles (bullets) */
+    padding: 0; /* Remove any default padding */
+}
+
+.skills-content .Technologies li {
+    text-align: center; /* Center the text horizontally within each list item */
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center content vertically within each list item */
+    justify-content: center; /* Center content horizontally within each list item */
+}
+
+
+/* Create a container div to hold both the programming language name and the loading bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Make the container expand to fill the available space */
+
+}
+
+/* Style the programming language name */
+.progress-language {
+    flex: 1; /* Allow the name to grow and occupy available space */
+    white-space: nowrap; /* Prevent wrapping of long language names */
+}
+
+/* Style the loading bars */
+.progress-bar-full {
+    width: 200px; /* Adjust the width of the progress bar */
+    height: 8px; /* Adjust the height of the progress bar */
+    background: linear-gradient(to right, green 100%, white);
+    border-radius: 5px;
+
+    
+}
+.progress-bar-intermediate {
+    width: 200px; /* Adjust the width of the progress bar */
+    height: 8px; /* Adjust the height of the progress bar */
+    background: linear-gradient(to right, green 50%, white 50%) no-repeat;
+    border-radius: 5px;
+}
+
+.progress-bar-beginner {
+    width: 200px; /* Adjust the width of the progress bar */
+    height: 8px; /* Adjust the height of the progress bar */
+    background: linear-gradient(to right, green 25%, white 0%) no-repeat;
+    border-radius: 5px;
+    
+}
+/* Additional section styles */
+
+#education, #experience {
+    padding: 0px 0;
+    background-color: #f0f0f0;
+}
+
+
+.education {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-image {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-left: 20px; /* Adjust the margin as needed for spacing */
+    max-width: 200px; /* Adjust the maximum width of the image */
+}
+
+.education-image img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlap-image {
+    width: 150px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.experience-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.experience {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.experience ul {
+    list-style-type: disc; /* Use bullets (you can change 'disc' to 'circle' or 'square' for different styles) */
+    margin-left: 0px; /* Adjust the left margin for spacing */
+    padding-left: 20px; /* Adjust the left padding for spacing */
+}
+
+/* Style the list items */
+.experience li {
+    margin-bottom: 8px; /* Adjust the spacing between each bullet point */
+}
+
+.experience p {
+    color: #777;
+}
+
+.experience-image {
+    flex-shrink: 0;
+    margin-left: auto; /* Push the image to the right */
+    max-width: 100px; /* Adjust the maximum width of the image */
+    margin-top: -50px
+}
+
+.experience-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-image-left {
+    flex: 1; /* Allow the image to grow and occupy available space */
+    max-width: 150%; /* Adjust the maximum width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 20px; /* Adjust the margin as needed for spacing */
+}
+
+.about-image-left img {
+    width: 100%; /* Ensure the image takes up the entire container width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure it doesn't exceed the container's height */
+}
+
+
+.about-content {
+    flex: 2; /* Allow the content to grow and occupy available space */
+}
