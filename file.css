@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Reset some default styles for consistency */
 body, h1, h2, h3, ul, p {
     margin: 0;
@@ -17,21 +15,8 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll due to background image */
 }
 
-.background-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place the background layer behind the content */
-    background-image: url("background.jpg"); /* Replace with the path to your background image */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .container {
-    max-width: 20%; /* Set the maximum width to occupy 80% of the screen */
+    max-width: 20%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -47,13 +32,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1; /* Place the header above the background layer */
+    z-index: 1;
 }
 
 /* Style the logo */
 .logo {
-    width: 50px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
+    width: 50px;
+    height: auto;
 }
 
 nav ul {
@@ -81,14 +66,14 @@ nav ul li a {
 /* Initial styles for sections */
 .fade-in-section {
     opacity: 0;
-    transition: opacity 0.3s ease; /* Add a smooth transition */
+    transition: opacity 0.3s ease;
     margin-bottom: 200px;
 }
 
 /* Style for the specific custom-exception class */
 .custom-exception {
     opacity: 0;
-    transition: opacity 0.5s ease; /* Add a smooth transition */
+    transition: opacity 0.5s ease;
     margin-bottom: 0px;
     /* Your exception styles here */
 }
@@ -96,7 +81,7 @@ nav ul li a {
 /* Style the logo button */
 .button-container {
     display: flex;
-    align-items: center; /* Align buttons vertically with the logo */
+    align-items: center;
 }
 
 /* Style the logo button */
@@ -105,22 +90,22 @@ nav ul li a {
     border: none;
     cursor: pointer;
     padding: 0;
-    width: 50px; /* Set the button width to match the logo's width */
-    height: 50px; /* Set the button height to match the logo's height */
-    text-align: center; /* Center the image horizontally */
+    width: 50px;
+    height: 50px;
+    text-align: center;
 }
 
 .logo-button img {
-    width: 60%; /* Set the image width to 100% of the button */
-    height: auto; /* Maintain aspect ratio */
+    width: 60%;
+    height: auto;
 }
 
 main {
-    max-width: 60%; /* Set the maximum width to occupy 80% of the screen */
-    margin:  auto;
-    padding:100px;
-    background-color: #ffffff; /* White background for content */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for content */
+    max-width: 60%;
+    margin: auto;
+    padding: 100px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
@@ -132,37 +117,35 @@ footer {
 
 #about {
     display: flex;
-    align-items: center; /* Center content vertically */
+    align-items: center;
     padding-top: 20px;
     padding-bottom: 300px;
 }
 
 /* Style for the About section */
 .about-content {
-    
     font-size: 48px;
     flex: 1;
     padding: 2rem;
 }
 
-
 .about-image {
     flex: 1;
     display: flex;
-    justify-content: center; /* Keep aligning content to the right */
-    padding: 2rem 0.5rem 2rem 1rem; /* Adjust the padding to move the image closer to the text */
-    order: 2; /* Keep the order of this element in the flex container */
+    justify-content: center;
+    padding: 2rem 0.5rem 2rem 1rem;
+    order: 2;
 }
 
 .about-image img {
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    max-height: 100%; /* Ensure image doesn't exceed container height */
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .enlarged-image {
-    width: 100%; /* Adjust the width percentage as needed */
-    max-width: 800px; /* Set a maximum width to maintain image quality */
-    height: auto; /* Maintain the aspect ratio */
+    width: 100%;
+    max-width: 800px;
+    height: auto;
 }
 
 .about-text {
@@ -179,14 +162,13 @@ footer {
 }
 
 ul li a {
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px;
 }
 
-.world-map img{
+.world-map img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* padding-bottom: 200px; */
 }
 
 .map-title {
@@ -274,7 +256,6 @@ ul li a {
     left: 77.5%;
 }
 
-
 /* Style for the Skills section */
 #skills {
     display: flex;
@@ -296,38 +277,30 @@ h3 {
     font-size: 32px;
 }
 
-
 p {
     text-align: center;
 }
 
 .skills-content h2 {
-    margin-bottom: 20px; /* Adjust the margin as needed for more whitespace */
+    margin-bottom: 20px;
 }
-
 
 .skills-content .Technologies .progress-container .progress-language {
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 24px;
 }
-
 
 .skills-content {
-    background-color: #F0F0F0; /* Set a background color for all divs */
-    padding: 80px; /* Add padding to create space inside each div */
-    margin-bottom: 20px; /* Add margin to create space between divs */
-    margin-left: 2px; /* Add margin to the left of each div */
-    margin-right: 2px; /* Add margin to the right of each div */
+    background-color: #F0F0F0;
+    padding: 80px;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
-
-
-
 .skills-content ul {
-    
     list-style: none;
     padding: 0;
 }
-
 
 .skills-content li {
     padding: 10px;
@@ -336,64 +309,58 @@ p {
     position: relative;
     display: flex;
     align-items: center;
-
 }
-
-
 
 .skills-content .Technologies {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    list-style: none; /* Remove default list styles (bullets) */
-    padding: 0; /* Remove any default padding */
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
 }
 
 .skills-content .Technologies li {
-    text-align: center; /* Center the text horizontally within each list item */
-    display: flex; /* Use flexbox for vertical centering */
-    align-items: center; /* Center content vertically within each list item */
-    justify-content: center; /* Center content horizontally within each list item */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 
 /* Create a container div to hold both the programming language name and the loading bar */
 .progress-container {
     display: flex;
     align-items: center;
-    width: 100%; /* Make the container expand to fill the available space */
-
+    width: 100%;
 }
 
 /* Style the programming language name */
 .progress-language {
-    flex: 1; /* Allow the name to grow and occupy available space */
-    white-space: nowrap; /* Prevent wrapping of long language names */
+    flex: 1;
+    white-space: nowrap;
 }
 
 /* Style the loading bars */
 .progress-bar-full {
-    width: 200px; /* Adjust the width of the progress bar */
-    height: 8px; /* Adjust the height of the progress bar */
+    width: 200px;
+    height: 8px;
     background: linear-gradient(to right, green 100%, white);
     border-radius: 5px;
-
-    
 }
+
 .progress-bar-intermediate {
-    width: 200px; /* Adjust the width of the progress bar */
-    height: 8px; /* Adjust the height of the progress bar */
+    width: 200px;
+    height: 8px;
     background: linear-gradient(to right, green 50%, white 50%) no-repeat;
     border-radius: 5px;
 }
 
 .progress-bar-beginner {
-    width: 200px; /* Adjust the width of the progress bar */
-    height: 8px; /* Adjust the height of the progress bar */
+    width: 200px;
+    height: 8px;
     background: linear-gradient(to right, green 25%, white 0%) no-repeat;
     border-radius: 5px;
-    
 }
+
 /* Additional section styles */
 
 #education, #experience {
@@ -401,11 +368,10 @@ p {
     background-color: #f0f0f0;
 }
 
-
 .education {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Adjust the margin as needed */
+    margin-bottom: 20px;
 }
 
 .education-details {
@@ -413,19 +379,19 @@ p {
 }
 
 .education-image {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-    margin-left: 20px; /* Adjust the margin as needed for spacing */
-    max-width: 200px; /* Adjust the maximum width of the image */
+    flex-shrink: 0;
+    margin-left: 20px;
+    max-width: 200px;
 }
 
 .education-image img {
     max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
 .overlap-image {
-    width: 150px; /* Adjust the width as needed */
-    height: 150px; /* Adjust the height as needed */
+    width: 150px;
+    height: 150px;
 }
 
 .section-header {
@@ -451,14 +417,14 @@ p {
 }
 
 .experience ul {
-    list-style-type: disc; /* Use bullets (you can change 'disc' to 'circle' or 'square' for different styles) */
-    margin-left: 0px; /* Adjust the left margin for spacing */
-    padding-left: 20px; /* Adjust the left padding for spacing */
+    list-style-type: disc;
+    margin-left: 0px;
+    padding-left: 20px;
 }
 
 /* Style the list items */
 .experience li {
-    margin-bottom: 8px; /* Adjust the spacing between each bullet point */
+    margin-bottom: 8px;
 }
 
 .experience p {
@@ -467,9 +433,9 @@ p {
 
 .experience-image {
     flex-shrink: 0;
-    margin-left: auto; /* Push the image to the right */
-    max-width: 100px; /* Adjust the maximum width of the image */
-    margin-top: -50px
+    margin-left: auto;
+    max-width: 100px;
+    margin-top: -50px;
 }
 
 .experience-image img {
@@ -479,22 +445,22 @@ p {
 
 #hobbies {
     display: flex;
-    align-items: center; /* Center content vertically */
+    align-items: center;
 }
 
 .hobbies-image-left {
-    flex: 1; /* Allow the image to grow and occupy available space */
-    max-width: 150%; /* Adjust the maximum width of the image */
-    height: auto; /* Maintain the aspect ratio */
-    margin-right: 20px; /* Adjust the margin as needed for spacing */
+    flex: 1;
+    max-width: 150%;
+    height: auto;
+    margin-right: 20px;
 }
 
 .hobbies-image-left img {
-    width: 100%; /* Ensure the image takes up the entire container width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Ensure it doesn't exceed the container's height */
+    width: 100%;
+    height: auto;
+    max-height: 100%;
 }
 
 .about-content {
-    flex: 2; /* Allow the content to grow and occupy available space */
+    flex: 2;
 }
