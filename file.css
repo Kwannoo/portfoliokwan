@@ -263,6 +263,7 @@ ul li a {
     margin-bottom: 30px;
     justify-content: space-between;
     align-items: flex-start;
+    overflow-x: auto; /* Add this to enable horizontal scrolling */
 }
 
 /* The rest of your CSS styles for h2 and h3 remain the same */
@@ -288,13 +289,15 @@ p {
 .skills-content .Technologies .progress-container .progress-language {
     font-size: 24px;
 }
-
+ 
 .skills-content {
     background-color: #F0F0F0;
     padding: 80px;
     margin-bottom: 20px;
     margin-left: 2px;
     margin-right: 2px;
+    max-width: 30%; /* Adjust this value as needed */
+    flex: 1; /* Allow divs to grow within the container */
 }
 
 .skills-content ul {
