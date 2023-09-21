@@ -5,34 +5,6 @@
 <head>
     <title>Kwan Portfolio</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Get all navigation links with data-scroll-to attribute
-            const links = document.querySelectorAll('a[data-scroll-to]');
-    
-            // Add click event listeners to the links
-            links.forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault(); // Prevent the default behavior of the anchor link
-    
-                    // Get the target section's id from the data-scroll-to attribute
-                    const targetId = link.getAttribute('data-scroll-to');
-                    const targetSection = document.getElementById(targetId);
-    
-                    // Scroll to the target section smoothly
-                    if (targetSection) {
-                        const offset = 80; // Adjust the offset value as needed
-                        const targetOffsetTop = targetSection.getBoundingClientRect().top + window.scrollY;
-                        
-                        window.scrollTo({
-                            top: targetOffsetTop - offset,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
     <style>
         .underline-header {
             text-decoration: underline;
@@ -63,7 +35,12 @@
                 </a>
                 <!-- <button class="logo-button"><img src="pictures/twitter.png" alt="Twitter"></button> -->
             </div>
-
+            <div class="button-container">
+                <a href="https://github.com/Kwannoo">
+                    <button class="logo-button"><img src="pictures/github.png" alt="Instagram"></button>
+                </a>
+                <!-- <button class="logo-button"><img src="pictures/twitter.png" alt="Twitter"></button> -->
+            </div>
         </div>
     </header>
     <main>
