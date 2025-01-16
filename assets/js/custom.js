@@ -43,7 +43,7 @@ $(document).ready(function(){
 		//=============
 
 		$('li.smooth-menu a').bind("click", function(event) {
-			event.preventDefault();
+			// event.preventDefault();
 			document.querySelector(this.getAttribute('href')).scrollIntoView({
 				behavior: 'smooth'
 			});
