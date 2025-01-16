@@ -149,7 +149,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
     margin-left: 15px;
 }
 .sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a {color:#424141;}
-.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #d92cf9;}
+.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:hover,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li > a:focus,.sticky-wrapper.is-sticky nav.navbar.bootsnav ul.nav > li.active>a{color: #2189eb;}
 /*.nav li*/
 
 
@@ -877,29 +877,31 @@ filter: grayscale(100%) invert(1) brightness(150%);
 
 /* projects */
 
-.education {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+
+
+.project {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 150px; /* Text takes 1fr (remaining space), image is 200px */
+    gap: 20px; /* Space between text and image */
+    align-items: center; /* Align items vertically */
 }
 
-.education-details {
-    flex: 1;
+.project-details {
+    /* Add any specific styles for the text container if needed */
 }
 
-.education-image {
-    flex-shrink: 0;
-    margin-left: 20px;
-    max-width: 20px;
+.image-container img {
+    width: 150px; /* Makes the image fill the container */
+    height: auto; /* Keeps the aspect ratio */
 }
 
-.education-image img {
-    max-width: 20%;
-    height: auto;
+.header-description {
+    text-transform: none;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.overlap-image {
-    width: 150px;
-    height: 150px;
-}
 /*========================Thank you=================
