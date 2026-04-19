@@ -1,747 +1,744 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kwan Sing Lie — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #faf8f3;
+  --bg2:     #f3f0e8;
+  --bg3:     #edeae0;
+  --ink:     #1a1814;
+  --muted:   #8a8070;
+  --accent:  #c8472a;
+  --accent2: #e87030;
+  --border:  #e0dcd0;
+  --font-d:  'Playfair Display', serif;
+  --font-b:  'Lato', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+section{padding:120px 0}
+.container{max-width:1100px;margin:0 auto;padding:0 64px}
+strong{font-weight:700}
 
-    <head>
-        <!-- meta data -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 64px;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,248,243,0.95);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.nav-brand{font-family:var(--font-d);font-style:italic;font-size:1.2rem;color:var(--ink)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-lang{border:1px solid var(--border);padding:4px 12px;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);cursor:pointer;background:none;transition:all 0.2s}
+.nav-lang:hover{border-color:var(--accent);color:var(--accent)}
 
-        <!--font-family-->
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
-        
-        <!-- title of site -->
-        <title>kwanportfolio</title>
+/* HERO */
+#hero{
+  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;padding-top:80px;border-bottom:1px solid var(--border);
+}
+.hero-left{padding:0 64px 0 64px}
+.hero-issue{
+  font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:32px;display:flex;align-items:center;gap:12px;
+}
+.hero-issue::before{content:'';width:40px;height:1px;background:var(--accent)}
+.hero-name{
+  font-family:var(--font-d);font-size:clamp(52px,6vw,86px);
+  font-weight:900;line-height:0.95;letter-spacing:-0.02em;margin-bottom:28px;
+}
+.hero-name .accent{color:var(--accent);font-style:italic}
+.hero-desc{
+  font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:48px;
+  max-width:380px;font-weight:300;
+}
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--accent);color:#fff;padding:14px 32px;
+  font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+  font-weight:700;transition:all 0.25s;
+}
+.btn-primary:hover{background:var(--accent2)}
+.btn-text{
+  font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);border-bottom:1px solid var(--border);padding-bottom:2px;
+  transition:all 0.2s;
+}
+.btn-text:hover{color:var(--accent);border-color:var(--accent)}
+.hero-right{
+  height:100vh;position:relative;overflow:hidden;
+  background:var(--bg2);
+}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-right-caption{
+  position:absolute;bottom:32px;left:32px;
+  font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);
+}
 
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
-       
-        <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:0}
+.section-header{
+  display:grid;grid-template-columns:200px 1fr;gap:64px;
+  align-items:baseline;padding-bottom:48px;border-bottom:1px solid var(--border);margin-bottom:64px;
+}
+.section-num{
+  font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+}
+.section-title{
+  font-family:var(--font-d);font-size:clamp(36px,4vw,56px);
+  font-weight:900;letter-spacing:-0.02em;line-height:1;
+}
+.section-title em{font-style:italic;color:var(--accent)}
 
-		<!--flat icon css-->
-		<link rel="stylesheet" href="assets/css/flaticon.css">
+/* ABOUT */
+#about .about-grid{display:grid;grid-template-columns:1fr 340px;gap:96px;align-items:start}
+.about-text p{color:var(--muted);margin-bottom:20px;font-size:1rem;line-height:1.8}
+.about-text p strong{color:var(--ink)}
+.about-facts{margin-top:40px;border-top:1px solid var(--border);padding-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.fact-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.fact-val{font-size:0.9rem;color:var(--ink)}
+.about-photo img{width:100%;filter:sepia(8%)}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.social-link{
+  border:1px solid var(--border);padding:7px 16px;
+  font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--muted);transition:all 0.2s;
+}
+.social-link:hover{border-color:var(--accent);color:var(--accent)}
 
-		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
+/* EDUCATION */
+#education{background:var(--bg2)}
+.edu-list{display:flex;flex-direction:column}
+.edu-row{
+  display:grid;grid-template-columns:160px 1fr 80px;gap:32px;
+  padding:32px 0;border-bottom:1px solid var(--border);align-items:baseline;
+}
+.edu-years{font-size:0.78rem;color:var(--muted);letter-spacing:0.04em}
+.edu-deg{font-family:var(--font-d);font-size:1.15rem;font-weight:700}
+.edu-school{font-size:0.85rem;color:var(--muted);margin-top:4px}
+.edu-desc{font-size:0.85rem;color:var(--muted);margin-top:8px;line-height:1.65;grid-column:2;grid-row:2}
+.edu-flag{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);text-align:right}
 
-        <!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-		
-        <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
-		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
-        
-        <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
-        
-        <!--responsive.css-->
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		
-        <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+/* SKILLS */
+.skills-two{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.skill-group h3{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tag{
+  border:1px solid var(--border);padding:8px 16px;
+  font-size:0.8rem;color:var(--ink);
+}
+.lang-item{display:flex;align-items:baseline;gap:0;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border)}
+.lang-name{font-size:0.9rem}
+.lang-level{font-size:0.75rem;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
 
-    </head>
-	
-	<body>
-		<!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-		
-		<!-- top-area Start -->
-		<header class="top-area">
-			<div class="header-area">
-				<!-- Start Navigation -->
-			    <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
+/* EXPERIENCE */
+#experience{background:var(--bg2)}
+.exp-list{display:flex;flex-direction:column}
+.exp-row{
+  display:grid;grid-template-columns:160px 1fr;gap:48px;
+  padding:40px 0;border-bottom:1px solid var(--border);
+}
+.exp-date{color:var(--muted);font-size:0.82rem;padding-top:4px}
+.exp-role{font-family:var(--font-d);font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.exp-company{font-size:0.85rem;color:var(--accent);margin-bottom:4px;letter-spacing:0.04em}
+.exp-loc{font-size:0.78rem;color:var(--muted);margin-bottom:12px}
+.exp-desc{font-size:0.88rem;color:var(--muted);line-height:1.7}
 
-			        <div class="container">
+/* PROJECTS */
+.project-pair{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.project-block{background:var(--bg2);padding:48px}
+.project-block:first-child{background:var(--ink);color:#f0ece4}
+.project-block:first-child .proj-tag{color:rgba(255,255,255,0.4)}
+.project-block:first-child .proj-desc{color:rgba(255,255,255,0.55)}
+.project-block:first-child .proj-meta span{border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.4)}
+.project-block:first-child .proj-dl{color:var(--accent2);border-color:rgba(232,112,48,0.3)}
+.proj-logo{width:52px;height:52px;object-fit:contain;margin-bottom:24px;opacity:0.85}
+.proj-tag{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.proj-title{font-family:var(--font-d);font-size:1.25rem;font-weight:700;line-height:1.25;margin-bottom:16px}
+.proj-desc{font-size:0.88rem;color:var(--muted);line-height:1.7}
+.proj-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.proj-meta span{font-size:0.72rem;border:1px solid var(--border);padding:3px 10px;color:var(--muted)}
+.proj-dl{display:inline-block;margin-top:20px;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid rgba(200,71,42,0.3);padding-bottom:2px;transition:color 0.2s}
+.proj-dl:hover{color:var(--accent2)}
 
-			            <!-- Start Header Navigation -->
-			            <div class="navbar-header">
-			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-			                    <i class="fa fa-bars"></i>
-			                </button>
-			                <a class="navbar-brand" href="index.html">kwannoo</a>
-			            </div><!--/.navbar-header-->
-			            <!-- End Header Navigation -->
+/* PERSONAL PROJECTS */
+.pers-proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.pers-proj-card{background:var(--bg);padding:40px 32px;display:flex;flex-direction:column}
+.pers-proj-placeholder{align-items:center;justify-content:center;min-height:240px;background:var(--bg2)}
+.pp-placeholder-inner{font-size:0.82rem;color:var(--muted);letter-spacing:0.06em;border:1px dashed var(--border);padding:20px 32px}
+.pp-tag{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.pp-title{font-family:var(--font-d);font-size:1.15rem;font-weight:700;line-height:1.2;margin-bottom:12px}
+.pp-desc{font-size:0.85rem;color:var(--muted);line-height:1.7;flex:1}
+.pp-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.pp-meta span{font-size:0.72rem;border:1px solid var(--border);padding:3px 10px;color:var(--muted)}
+.pp-link{display:inline-block;margin-top:16px;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid rgba(200,71,42,0.3);padding-bottom:2px;transition:color 0.2s}
+.pp-link:hover{color:var(--accent2)}
+@media(max-width:900px){.pers-proj-grid{grid-template-columns:1fr}}
 
-			            <!-- Collect the nav links, forms, and other content for toggling -->
-			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                <li class=" smooth-menu active"></li>
-			                    <li class=" smooth-menu"><a href="#travel">travel</a></li>
-			                    <li class=" smooth-menu"><a href="#education">education</a></li>
-			                    <li class="smooth-menu"><a href="#skills">skills</a></li>
-			                    <li class="smooth-menu"><a href="#experience">experience</a></li>
-			                    <li class="smooth-menu"><a href="#profiles">profile</a></li>
-			                    <li class="smooth-menu"><a href="#contact">contact</a></li>
-			                    <li class="smooth-menu"><a href="portfoliokwanEN.html">EN</a></li>
-								
-			                </ul><!--/.nav -->
-			            </div><!-- /.navbar-collapse -->
-			        </div><!--/.container-->
-			    </nav><!--/nav-->
-			    <!-- End Navigation -->
-			</div><!--/.header-area-->
+/* PROFILES */
+.profiles-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border)}
+.prof-card{
+  padding:40px 24px;display:flex;flex-direction:column;align-items:center;gap:14px;
+  border-right:1px solid var(--border);cursor:pointer;transition:background 0.2s;
+}
+.prof-card:last-child{border-right:none}
+.prof-card:hover{background:var(--bg2)}
+.prof-card img{width:48px;height:48px;object-fit:contain;filter:grayscale(20%)}
+.prof-card-name{font-size:0.82rem;font-weight:700;letter-spacing:0.04em}
+.prof-card-sub{font-size:0.72rem;color:var(--muted)}
 
-		    <div class="clearfix"></div>
+/* TRAVEL */
+.travel-box{border:1px solid var(--border);overflow:hidden;height:460px}
+.travel-box iframe{width:100%;height:100%;border:none}
 
-		</header><!-- /.top-area-->
-		<!-- top-area End -->
-	
-		<!--welcome-hero start -->
-		<section id="welcome-hero" class="welcome-hero">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<div class="header-text">
-							<h2>Hoi <span>,</span> <br> ik ben  kwan <span>!</span>   </h2>
-							<p>Welkom bij mijn portfolio om mij wat beter te leren kennen</p>
-							<a href="assets/download/Kwan_CV_NL.pdf" download>Download CV</a>
-						</div><!--/.header-text-->
-					</div><!--/.col-->
-				</div><!-- /.row-->
-			</div><!-- /.container-->
+/* CONTACT */
+#contact .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-photo img{width:100%;filter:sepia(5%)}
+.contact-text .big-name{
+  font-family:var(--font-d);font-size:clamp(36px,4vw,52px);
+  font-weight:900;letter-spacing:-0.02em;margin-bottom:8px;line-height:1.05;
+}
+.contact-text .sub{font-family:var(--font-d);font-style:italic;font-size:1rem;color:var(--muted);margin-bottom:48px}
+.ci-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ci-val{font-size:0.95rem;color:var(--ink);margin-bottom:28px}
+.ci-val a:hover{color:var(--accent)}
 
-		</section><!--/.welcome-hero-->
-		<!--welcome-hero end -->
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);padding:28px 64px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+footer p{font-size:0.75rem;color:var(--muted);letter-spacing:0.04em}
 
-		<!--about start -->
-		<section id="about" class="about">
-			<div class="section-heading text-center">
-				<h2>Over mij</h2>
-			</div>
-			<div class="container">
-				<div class="about-content">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="single-about-txt">
-								<h3>
+/* TWEAKS */
+#tweaks-panel{
+  position:fixed;bottom:24px;right:24px;z-index:9999;
+  background:var(--bg);border:1px solid var(--border);border-radius:0;
+  padding:20px 24px;width:230px;display:none;
+  box-shadow:0 8px 32px rgba(0,0,0,0.08);
+}
+#tweaks-panel h4{font-family:var(--font-d);font-size:0.9rem;font-weight:700;margin-bottom:16px}
+.tw-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tw-opts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tw{font-size:0.72rem;padding:6px 12px;cursor:pointer;border:1px solid var(--border);background:none;color:var(--muted);transition:all 0.2s;font-family:var(--font-b)}
+.tw.active,.tw:hover{border-color:var(--accent);color:var(--accent)}
 
-									Hallo! Ik ben Kwan, een gepassioneerde afgestudeerde in computer- en computationele wetenschappen met een flexibele en resultaatgerichte instelling en een sterke toewijding aan het behalen van uitzonderlijke resultaten. Met de kennis die ik heb opgedaan in de afgelopen jaren, specialiseer ik mij voornamelijk in machine learning, data engineering en data science.								</h3>
-								<p>
-									Dit portfolio toont mijn opleiding, ervaringen, projecten en hobby's om mij beter te leren kennen. Ik haal voldoening uit het oplossen van complexe problemen, het analyseren van data en het gebruiken van innovatieve technologieën om impactvolle oplossingen te creëren. Ik streef er constant naar mezelf te verbeteren in elke taak die ik aanpak, en ik geniet oprecht van het leer- en groeiproces.
-									
-									Voel je vrij om mijn projecten te verkennen en aarzel niet om contact op te nemen als je mogelijke kansen of samenwerkingen wilt bespreken. Ik hoor graag van je!								<div class="row">
-									<div class="col-sm-4">
-										<div class="single-about-add-info">
-											<h3>email</h3>
-											<p>kwansing2000@hotmail.nl</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-offset-1 col-sm-5">
-							<div class="single-about-img">
-								<img src="assets/images/about/profile_about.jpeg" alt="profile_image">
-								<div class="about-list-icon">
-									<ul>
-										<li>
-											<a href="https://www.linkedin.com/in/kwan-lie-169834157/">
-												<i  class="fa fa-linkedin" aria-hidden="true"></i>
-											</a>
-										</li><!-- / li -->
-										<li>
-											<a href="https://www.instagram.com/kwannoo_">
-												<i  class="fa fa-instagram" aria-hidden="true"></i>
-											</a>
-										</li><!-- / li -->
-										<li>
-											<a href="https://github.com/Kwannoo">
-												<i  class="fa fa-github" aria-hidden="true"></i>
-											</a>
-										</li><!-- / li -->
-										
-										
-									</ul><!-- / ul -->
-								</div><!-- /.about-list-icon -->
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:none}
 
-							</div>
+@media(max-width:900px){
+  .container{padding:0 24px}
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  #hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:0 24px}
+  #about .about-grid,.skills-two,.contact-grid,.project-pair{grid-template-columns:1fr}
+  .edu-row,.exp-row{grid-template-columns:1fr}
+  .profiles-strip{grid-template-columns:1fr 1fr}
+  .section-header{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</section><!--/.about-->
-		<!--about end -->
+<nav>
+  <a class="nav-brand" href="#hero">Kwannoo</a>
+  <div class="nav-links">
+    <a href="#about" data-i18n="nav-about">About</a>
+    <a href="#education" data-i18n="nav-education">Education</a>
+    <a href="#skills" data-i18n="nav-skills">Skills</a>
+    <a href="#experience" data-i18n="nav-experience">Experience</a>
+    <a href="#projects" data-i18n="nav-projects">Projects</a>
+    <a href="#profiles" data-i18n="nav-profiles">Profiles</a>
+    <a href="#contact" data-i18n="nav-contact">Contact</a>
+    <button class="nav-lang" id="lang-btn">NL</button>
+  </div>
+</nav>
 
-		<section id="travel" class="education">
-			<div class="section-heading text-center">
-				<h2>Plaatsen bezocht</h2>
-			</div>
-    	<!-- Using iframe -->
-    	<iframe class="travel_map" src="assets/images/travel/myVisitedPlaces.html" width="100%" height="500px" style="border:none;"></iframe>
-		</section>
-		
-		<!--education start -->
-		<section id="education" class="education">
-			<div class="section-heading text-center">
-				<h2>opleiding</h2>
-			</div>
-			<div class="container">
-				<div class="education-horizontal-timeline">
-					<div class="row">
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2022 - 2024</h2>
-									<h3>Master <span>of </span> Computational science</h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											Universiteit van Amsterdam & Vrije universiteit Amsterdam
-										</h4>
-										<h5>Amsterdam, Nederland</h5>
-										<p class="description">
-											Deze master richt zich op het ontwikkelen van computationele modellen op basis van observaties en data uit de fysieke, sociale, aard-, economische en levenswetenschappen. Ik heb verschillende cursussen gevolgd die gerelateerd zijn aan data science, wiskundige analyse en stochastische simulaties.
-										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2019 - 2022</h2>
-									<h3>bachelor <span>of </span> computer science</h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											universiteit leiden
-										</h4>
-										<h5>leiden, the netherlands</h5>
-										<p class="description">
-											Deze bachelor richt zich op de vakken computersystemen en netwerken, zowel de toepassing als de theorie erachter. Ik heb verschillende cursussen gevolgd die gerelateerd zijn aan programmeren, zoals datastructuren, computerarchitecturen, besturingssystemen en lineaire algebra.										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="single-horizontal-timeline">
-								<div class="experience-time">
-									<h2>2013 - 2019</h2>
-									<h3>Technasium vwo middle/high school </h3>
-								</div><!--/.experience-time-->
-								<div class="timeline-horizontal-border">
-									<i class="fa fa-circle" aria-hidden="true"></i>
-									<span class="single-timeline-horizontal"></span>
-								</div>
-								<div class="timeline">
-									<div class="timeline-content">
-										<h4 class="title">
-											keizer karel college
-										</h4>
-										<h5>amstelveen, the netherlands</h5>
-										<p class="description">
-											Tijdens mijn middelbare schooljaren volgde ik het NG/NT-profiel, dat de nadruk legt op beta-vakken zoals wiskunde, natuurkunde, scheikunde en biologie. Daarnaast nam ik deel aan de Technasium-specialisatie, waar ik ervaring opdeed in projectontwikkeling voor externe klanten, evenals vaardigheden in presenteren, rapporteren en samenwerken.										</p>
-									</div><!--/.timeline-content-->
-								</div><!--/.timeline-->
-							</div>
-						</div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-issue" data-i18n="hero-issue">Portfolio · 2024</div>
+    <h1 class="hero-name">
+      Kwan Sing<br>
+      <span class="accent">Lie</span>
+    </h1>
+    <p class="hero-desc" data-i18n-html="hero-desc">MSc Computational Science. Specialising in machine learning, data engineering &amp; data science.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="assets/download/Kwan_CV.pdf" download data-i18n="hero-btn-cv">Download CV</a>
+      <a class="btn-text" href="#about" data-i18n="hero-btn-explore">Explore work →</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="assets/images/about/profile_about.jpeg" alt="Kwan Sing Lie">
+    <div class="hero-right-caption">Kwan Sing Lie · Amsterdam</div>
+  </div>
+</section>
 
-					</div>
-				</div>
-			</div>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="about-num">01 · About</span>
+      <h2 class="section-title" data-i18n-html="about-title">Hello, I'm<br><em>Kwan</em></h2>
+    </div>
+    <div class="about-grid fade-up">
+      <div>
+        <div class="about-text">
+          <p data-i18n-html="about-p1">I'm a computational science graduate with a flexible, results-driven mindset and a genuine passion for data. My work centres on machine learning, data engineering and data science.</p>
+          <p data-i18n-html="about-p2">I thrive on complex problems, love the process of learning, and find real satisfaction in building solutions that make a measurable impact.</p>
+        </div>
+        <div class="about-facts">
+          <div><div class="fact-label" data-i18n="about-label-based">Based in</div><div class="fact-val">Amsterdam, NL</div></div>
+          <div><div class="fact-label" data-i18n="about-label-email">Email</div><div class="fact-val">kwansing2000@hotmail.nl</div></div>
+        </div>
+        <div class="socials">
+          <a class="social-link" href="https://www.linkedin.com/in/kwan-lie-169834157/" target="_blank">LinkedIn</a>
+          <a class="social-link" href="https://github.com/Kwannoo" target="_blank">GitHub</a>
+          <a class="social-link" href="https://www.instagram.com/kwannoo_" target="_blank">Instagram</a>
+        </div>
+      </div>
+      <div class="about-photo">
+        <img src="assets/images/about/profile_tennis.jpg" alt="Kwan">
+      </div>
+    </div>
+  </div>
+</section>
 
-		</section><!--/.education-->
-		<!--education end -->
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="edu-num">02 · Education</span>
+      <h2 class="section-title" data-i18n-html="edu-title">Academic<br><em>background</em></h2>
+    </div>
+    <div class="edu-list fade-up">
+      <div class="edu-row">
+        <div class="edu-years">2022 – 2024</div>
+        <div>
+          <div class="edu-deg">MSc Computational Science</div>
+          <div class="edu-school">UvA &amp; VU Amsterdam · Amsterdam, NL</div>
+          <div class="edu-desc" data-i18n-html="edu-desc-1">Computational models in physical, social &amp; economic sciences. Data science, mathematical analysis, stochastic simulations.</div>
+        </div>
+        <div class="edu-flag">NL</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-years">2019 – 2022</div>
+        <div>
+          <div class="edu-deg">BSc Computer Science</div>
+          <div class="edu-school">Universiteit Leiden · Leiden, NL</div>
+          <div class="edu-desc" data-i18n-html="edu-desc-2">Computer systems &amp; networks, data structures, operating systems, linear algebra.</div>
+        </div>
+        <div class="edu-flag">NL</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-years">2013 – 2019</div>
+        <div>
+          <div class="edu-deg">Technasium VWO</div>
+          <div class="edu-school">Keizer Karel College · Amstelveen, NL</div>
+          <div class="edu-desc" data-i18n-html="edu-desc-3">NG/NT STEM curriculum. Technasium specialisation: projects for external clients, presentations, teamwork.</div>
+        </div>
+        <div class="edu-flag">NL</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-		<!--skills start -->
-		<section id="skills" class="skills">
-				<div class="skill-content">
-					<div class="section-heading text-center">
-						<h2>vaardigheden</h2>
-					</div>
-					<div class="container">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="single-skill-content">
-									<div class="barWrapper">
-										<span class="progressText">Python</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-												<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="10" aria-valuemax="100" style="">
-													  
-												</div>
-											</div>
-											<h3>95%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">C++</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>80%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">HTML/CSS</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="10" aria-valuemax="100" style="">
-												   
-											   </div>
-											</div>
-											<h3>70%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">SQL</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>60%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText"> git</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>70%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="single-skill-content">
-									<div class="barWrapper">
-										<span class="progressText">DUTCH</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-												<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100" style="">
-													
-												</div>
-											</div>
-											<h3>100%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">English</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="10" aria-valuemax="100" style="">
-												    
-											   </div>
-											</div>
-											<h3>100%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
-									<div class="barWrapper">
-										<span class="progressText">french / cantonese</span>
-										<div class="single-progress-txt">
-											<div class="progress ">
-											   <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="10" aria-valuemax="100" style="">
-												   
-											   </div>
-											</div>
-											<h3>20%</h3>	
-										</div>
-									</div><!-- /.barWrapper -->
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="skills-num">03 · Skills</span>
+      <h2 class="section-title" data-i18n-html="skills-title">Technical<br><em>toolkit</em></h2>
+    </div>
+    <div class="skills-two fade-up">
+      <div class="skill-group">
+        <h3 data-i18n-html="skills-prog-label">Programming &amp; Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Data Engineering</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">Time Series</span>
+          <span class="skill-tag">Econometrics</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3 data-i18n="skills-lang-label">Languages</h3>
+        <div>
+          <div class="lang-item"><span class="lang-name" data-i18n="lang-dutch">Dutch</span><span class="lang-level" data-i18n="lang-level-native">Native</span></div>
+          <div class="lang-item"><span class="lang-name" data-i18n="lang-english">English</span><span class="lang-level" data-i18n="lang-level-fluent">Fluent</span></div>
+          <div class="lang-item"><span class="lang-name" data-i18n="lang-french">French</span><span class="lang-level" data-i18n="lang-level-basic-1">Basic</span></div>
+          <div class="lang-item"><span class="lang-name" data-i18n="lang-cantonese">Cantonese</span><span class="lang-level" data-i18n="lang-level-basic-2">Basic</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-								</div>
-							</div>
-						</div><!-- /.row -->
-					</div>	<!-- /.container -->		
-				</div><!-- /.skill-content-->
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="exp-num">04 · Experience</span>
+      <h2 class="section-title" data-i18n-html="exp-title">Career<br><em>history</em></h2>
+    </div>
+    <div class="exp-list fade-up">
+      <div class="exp-row">
+        <div class="exp-date">2025 –<br><span data-i18n="exp-afm-dur">present</span></div>
+        <div>
+          <div class="exp-role" data-i18n="exp-afm-role">Data Scientist</div>
+          <div class="exp-company">Autoriteit Financiële Markten (AFM)</div>
+          <div class="exp-loc" data-i18n="exp-afm-loc">Amsterdam, Netherlands</div>
+          <p class="exp-desc" data-i18n-html="exp-afm-desc">Working within the Accountancy supervision sector, collaborating closely with toezichthouders and cross-functional teams. Building LLM applications and predictive models, regularly presenting findings to stakeholders, and working within a DevOps team to deliver production-grade data products.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2024<br><span data-i18n="exp-1-dur">7 months</span></div>
+        <div>
+          <div class="exp-role" data-i18n="exp-1-role">Data Science Intern</div>
+          <div class="exp-company">De Nederlandsche Bank (DNB)</div>
+          <div class="exp-loc" data-i18n="exp-1-loc">Amsterdam, Netherlands</div>
+          <p class="exp-desc" data-i18n-html="exp-1-desc">Worked within the Data Science cluster of BC_M&amp;MI. Key contributor to project 'Plutus' — predicting stablecoin volatility using econometric and ML models. Delivered EDA, presentations, and participated in workshops.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2019 – 2024<br><span data-i18n="exp-2-dur">5 years</span></div>
+        <div>
+          <div class="exp-role" data-i18n="exp-2-role">High School Tutor</div>
+          <div class="exp-company">Freelance</div>
+          <div class="exp-loc" data-i18n="exp-2-loc">Amstelveen / Aalsmeer, Netherlands</div>
+          <p class="exp-desc" data-i18n-html="exp-2-desc">Helped middle and high school students improve in STEM subjects, often turning failing grades into passes.</p>
+        </div>
+      </div>
+      <div class="exp-row">
+        <div class="exp-date">2017 – 2020<br><span data-i18n="exp-3-dur">3 years</span></div>
+        <div>
+          <div class="exp-role" data-i18n="exp-3-role">Waiter</div>
+          <div class="exp-company">Tanuki Amstelveen</div>
+          <div class="exp-loc" data-i18n="exp-3-loc">Amstelveen, Netherlands</div>
+          <p class="exp-desc" data-i18n-html="exp-3-desc">Delivered excellent customer service and coordinated with kitchen during peak hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-		</section><!--/.skills-->
-		<!--skills end -->
+<!-- PROJECTS -->
+<section id="projects" style="padding-bottom:0">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="proj-num">05 · Projects</span>
+      <h2 class="section-title" data-i18n-html="proj-title">Selected<br><em>work</em></h2>
+    </div>
+  </div>
+  <div class="project-pair fade-up">
+    <div class="project-block">
+      <img class="proj-logo" src="assets/images/projects/dnb.png" alt="DNB">
+      <div class="proj-tag" data-i18n="proj-1-tag">MSc Thesis · DNB · 2024</div>
+      <div class="proj-title" data-i18n="proj-1-title">The Stability of Stablecoins</div>
+      <p class="proj-desc" data-i18n-html="proj-1-desc">Predicting volatility of USDT &amp; USDC using time series econometric and ML models. Large-scale data engineering, feature selection, and exploratory analysis in collaboration with De Nederlandsche Bank.</p>
+      <div class="proj-meta">
+        <span>Python</span><span>Scikit-learn</span><span>TensorFlow</span><span>Pandas</span><span data-i18n="proj-1-grade">Grade: 8.0</span>
+      </div>
+      <a class="proj-dl" href="assets/download/Master_thesis_report_Kwan_Lie.pdf" download data-i18n="proj-1-dl">Download Report ↓</a>
+    </div>
+    <div class="project-block">
+      <img class="proj-logo" src="assets/images/projects/leiden.png" alt="Leiden">
+      <div class="proj-tag" data-i18n="proj-2-tag">BSc Thesis · Leiden · 2022</div>
+      <div class="proj-title" data-i18n="proj-2-title">How to Win in Checkers?</div>
+      <p class="proj-desc" data-i18n-html="proj-2-desc">Built the game of checkers and Minimax / MCTS algorithms entirely from scratch in C++. Conducted a detailed playstyle comparison between both algorithms.</p>
+      <div class="proj-meta">
+        <span>C++</span><span>MCTS</span><span>Minimax</span><span>Game Theory</span><span data-i18n="proj-2-grade">Grade: 7.0</span>
+      </div>
+      <a class="proj-dl" href="assets/download/Bachelor_thesis_report_Kwan_Lie.pdf" download data-i18n="proj-2-dl">Download Report ↓</a>
+    </div>
+  </div>
+</section>
 
-		<!--experience start -->
-		<section id="experience" class="experience">
-			<div class="section-heading text-center">
-				<h2>ervaring</h2>
-			</div>
-			<div class="container">
-				<div class="experience-content">
-						<div class="main-timeline">
-							<ul>
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="experience-time text-right">
-													<h2>2024 - 2024 (7 maanden)</h2>
-													<h3>data science stagiair</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5">
-												<div class="timeline">
-													<div class="timeline-content">
-														<h4 class="title">
-															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															de nederlandsche bank (DNB)
-														</h4>
-														<h5>amsterdam, nederland</h5>
-														<p class="description">
-															Ik heb een stage gelopen binnen het Data Science-cluster van BC_M&MI, waar ik waardevolle ervaring heb opgedaan op het gebied van Data Science. Ik speelde een belangrijke rol in het project 'Plutus', dat probeerde de volatiliteit van stablecoins te voorspellen met behulp van econometrische en machine learning-modellen, en voegde daarnaast extra verkennende data-analyse toe. Gedurende deze periode nam ik actief deel aan vergaderingen, workshops en teamuitjes, en gaf ik presentaties aan collega's.														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
+<!-- PERSONAL PROJECTS -->
+<section id="personal-projects">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="pers-proj-num">06 · Side Projects</span>
+      <h2 class="section-title" data-i18n-html="pers-proj-title">My<br><em>side projects</em></h2>
+    </div>
+    <div class="pers-proj-grid fade-up">
+      <div class="pers-proj-card">
+        <div class="pp-tag">App · 2026</div>
+        <div class="pp-title">Vocardably</div>
+        <p class="pp-desc">A flashcard-based language learning app, live and hosted online. Features a full login system, friend system, in-app shop, and progress tracking.</p>
+        <div class="pp-meta"><span>JavaScript</span><span>HTML / CSS</span><span>SQL</span></div>
+        <a class="pp-link" href="https://vocardably.com/" target="_blank">Visit site →</a>
+      </div>
+      <div class="pers-proj-card pers-proj-placeholder">
+        <div class="pp-placeholder-inner">Ongoing</div>
+      </div>
+      <div class="pers-proj-card pers-proj-placeholder">
+        <div class="pp-placeholder-inner">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-offset-1 col-md-5 experience-time-responsive">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2019 - 2024
-													</h2>
-													<h3>middelbare school bijles docent</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-5">
-												<div class="timeline">
-													<div class="timeline-content text-right">
-														<h4 class="title">
-															freelance
-														</h4>
-														<h5>amstelveen/aalsmeer, nederland</h5>
-														<p class="description">
-															Ik heb middelbare schoolleerlingen geholpen, vooral met hun STEM-vakken, waarbij ik hen ondersteunde bij het verbeteren van hun cijfers van onvoldoende naar voldoende, en af en toe zelfs hoge cijfers behaalde.
-														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5 experience-time-main">
-												<div class="experience-time">
-													<h2>
-														<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-														2019 - 2024
-													</h2>
-													<h3>high school tutor</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
+<!-- PROFILES -->
+<section id="profiles">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="prof-num">07 · Hobbies</span>
+      <h2 class="section-title" data-i18n-html="prof-title">Online<br><em>profiles</em></h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="profiles-strip fade-up">
+      <a class="prof-card" href="https://www.chess.com/member/kwannoo" target="_blank">
+        <img src="assets/images/profiles/pawn.png" alt="Chess">
+        <div class="prof-card-name">Chess</div>
+        <div class="prof-card-sub">chess.com</div>
+      </a>
+      <a class="prof-card" href="https://tracker.gg/valorant/profile/riot/Kwannoo%231234/overview" target="_blank">
+        <img src="assets/images/profiles/valorant.png" alt="Valorant">
+        <div class="prof-card-name">Valorant</div>
+        <div class="prof-card-sub">tracker.gg</div>
+      </a>
+      <a class="prof-card" href="https://mijnknltb.toernooi.nl/player-profile/2a8179da-f88b-4b26-9921-8f34c748af4f" target="_blank">
+        <img src="assets/images/profiles/knltb.webp" alt="Tennis">
+        <div class="prof-card-name">Tennis</div>
+        <div class="prof-card-sub">knltb.nl</div>
+      </a>
+      <a class="prof-card" href="https://myanimelist.net/profile/Kwannoo" target="_blank">
+        <img src="assets/images/profiles/MAL.png" alt="MAL">
+        <div class="prof-card-name">MyAnimeList</div>
+        <div class="prof-card-sub">myanimelist.net</div>
+      </a>
+    </div>
+  </div>
+  <div class="container" style="margin-top:48px">
+    <div class="travel-box fade-up">
+      <iframe src="assets/images/travel/myVisitedPlaces.html" title="Travel Map"></iframe>
+    </div>
+  </div>
+</section>
 
-								<li>
-									<div class="single-timeline-box fix">
-										<div class="row">
-											<div class="col-md-5">
-												<div class="experience-time text-right">
-													<h2>2017 - 2020</h2>
-													<h3>bediende</h3>
-												</div><!--/.experience-time-->
-											</div><!--/.col-->
-											<div class="col-md-offset-1 col-md-5">
-												<div class="timeline">
-													<div class="timeline-content">
-														<h4 class="title">
-															<span><i class="fa fa-circle" aria-hidden="true"></i></span>
-															tanuki amstelveen
-														</h4>
-														<h5>amstelveen, nederland</h5>
-														<p class="description">
-															Ik verleende uitstekende klantenservice door gasten hartelijk te verwelkomen, bestellingen nauwkeurig op te nemen en samen te werken met de keuken en de bar om een vlotte en tijdige service te garanderen, zelfs tijdens drukke uren.														</p>
-													</div><!--/.timeline-content-->
-												</div><!--/.timeline-->
-											</div><!--/.col-->
-										</div>
-									</div><!--/.single-timeline-box-->
-								</li>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-num" data-i18n="contact-num">08 · Contact</span>
+      <h2 class="section-title" data-i18n-html="contact-title">Let's<br><em>connect</em></h2>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-photo">
+        <img src="assets/images/about/profile_about.jpeg" alt="Kwan">
+      </div>
+      <div class="contact-text">
+        <div class="big-name">Kwan Sing Lie</div>
+        <div class="sub" data-i18n="contact-sub">MSc Computational Science · BSc Computer Science</div>
+        <div class="ci-label" data-i18n="contact-label-email">Email</div>
+        <div class="ci-val"><a href="mailto:kwansing2000@hotmail.nl">kwansing2000@hotmail.nl</a></div>
+        <div class="ci-label" data-i18n="contact-label-web">Website</div>
+        <div class="ci-val"><a href="https://kwannoo.github.io/portfoliokwan/" target="_blank">kwannoo.github.io/portfoliokwan</a></div>
+        <div class="socials">
+          <a class="social-link" href="https://www.linkedin.com/in/kwan-lie-169834157/" target="_blank">LinkedIn</a>
+          <a class="social-link" href="https://github.com/Kwannoo" target="_blank">GitHub</a>
+          <a class="social-link" href="https://www.instagram.com/kwannoo_" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-								
+<footer>
+  <p>© 2024 Kwan Sing Lie</p>
+  <p data-i18n="footer-location">Amsterdam, Netherlands</p>
+</footer>
 
-							</ul>
-						</div><!--.main-timeline-->
-					</div><!--.experience-content-->
-			</div>
+<div id="tweaks-panel">
+  <h4>Tweaks</h4>
+  <div class="tw-label">Accent Color</div>
+  <div class="tw-opts">
+    <button class="tw active" data-color="#c8472a">Terracotta</button>
+    <button class="tw" data-color="#2a6b9c">Indigo</button>
+    <button class="tw" data-color="#3a7d44">Forest</button>
+    <button class="tw" data-color="#8b4a9c">Plum</button>
+  </div>
+  <div class="tw-label">Background</div>
+  <div class="tw-opts">
+    <button class="tw active" data-bg="#faf8f3">Warm</button>
+    <button class="tw" data-bg="#f5f5f5">Cool</button>
+    <button class="tw" data-bg="#ffffff">White</button>
+  </div>
+  <div class="tw-label">Language</div>
+  <div class="tw-opts">
+    <button class="tw active" data-lang="en">EN</button>
+    <button class="tw" data-lang="nl">NL</button>
+  </div>
+</div>
 
-		</section><!--/.experience-->
-		<!--experience end -->
+<script>
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+});
+window.parent.postMessage({type: '__edit_mode_available'}, '*');
 
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
-		<!--experience start -->
-		<section id="experience" class="experience">
-			<div class="section-heading text-center">
-				<h2>projects</h2>
-				<h3 class="header-description">Hier kun je mijn projecten vinden, ook kun je mijn verslag van het project downloaden als je op de logo's klikt!</h3>
+// ── TRANSLATIONS ─────────────────────────────────────────────
+const T = {
+  en: {
+    'nav-about':'About','nav-education':'Education','nav-skills':'Skills',
+    'nav-experience':'Experience','nav-projects':'Projects','nav-profiles':'Profiles','nav-contact':'Contact',
+    'hero-issue':'Portfolio · 2024',
+    'hero-desc':'MSc Computational Science. Specialising in machine learning, data engineering &amp; data science.',
+    'hero-btn-cv':'Download CV','hero-btn-explore':'Explore work →',
+    'about-num':'01 · About','about-title':"Hello, I'm<br><em>Kwan</em>",
+    'about-p1':'I\'m a computational science graduate with a flexible, results-driven mindset and a genuine passion for data. My work centres on machine learning, data engineering and data science.',
+    'about-p2':'I thrive on complex problems, love the process of learning, and find real satisfaction in building solutions that make a measurable impact.',
+    'about-label-based':'Based in','about-label-email':'Email',
+    'edu-num':'02 · Education','edu-title':'Academic<br><em>background</em>',
+    'edu-desc-1':'Computational models in physical, social &amp; economic sciences. Data science, mathematical analysis, stochastic simulations.',
+    'edu-desc-2':'Computer systems &amp; networks, data structures, operating systems, linear algebra.',
+    'edu-desc-3':'NG/NT STEM curriculum. Technasium specialisation: projects for external clients, presentations, teamwork.',
+    'skills-num':'03 · Skills','skills-title':'Technical<br><em>toolkit</em>',
+    'skills-prog-label':'Programming &amp; Tools','skills-lang-label':'Languages',
+    'lang-dutch':'Dutch','lang-english':'English','lang-french':'French','lang-cantonese':'Cantonese',
+    'lang-level-native':'Native','lang-level-fluent':'Fluent','lang-level-basic-1':'Basic','lang-level-basic-2':'Basic',
+    'exp-num':'04 · Experience','exp-title':'Career<br><em>history</em>',
+    'exp-afm-dur':'present','exp-afm-role':'Data Scientist','exp-afm-loc':'Amsterdam, Netherlands',
+    'exp-afm-desc':'Working within the Accountancy supervision sector, collaborating closely with toezichthouders and cross-functional teams. Building LLM applications and predictive models, regularly presenting findings to stakeholders, and working within a DevOps team to deliver production-grade data products.',
+    'exp-1-dur':'7 months','exp-1-role':'Data Science Intern','exp-1-loc':'Amsterdam, Netherlands',
+    'exp-1-desc':"Worked within the Data Science cluster of BC_M&amp;MI. Key contributor to project 'Plutus' — predicting stablecoin volatility using econometric and ML models. Delivered EDA, presentations, and participated in workshops.",
+    'exp-2-dur':'5 years','exp-2-role':'High School Tutor','exp-2-loc':'Amstelveen / Aalsmeer, Netherlands',
+    'exp-2-desc':'Helped middle and high school students improve in STEM subjects, often turning failing grades into passes.',
+    'exp-3-dur':'3 years','exp-3-role':'Waiter','exp-3-loc':'Amstelveen, Netherlands',
+    'exp-3-desc':'Delivered excellent customer service and coordinated with kitchen during peak hours.',
+    'proj-num':'05 · Projects','proj-title':'Selected<br><em>work</em>',
+    'proj-1-tag':'MSc Thesis · DNB · 2024','proj-1-title':'The Stability of Stablecoins',
+    'proj-1-desc':'Predicting volatility of USDT &amp; USDC using time series econometric and ML models. Large-scale data engineering, feature selection, and exploratory analysis in collaboration with De Nederlandsche Bank.',
+    'proj-1-grade':'Grade: 8.0','proj-1-dl':'Download Report ↓',
+    'proj-2-tag':'BSc Thesis · Leiden · 2022','proj-2-title':'How to Win in Checkers?',
+    'proj-2-desc':'Built the game of checkers and Minimax / MCTS algorithms entirely from scratch in C++. Conducted a detailed playstyle comparison between both algorithms.',
+    'proj-2-grade':'Grade: 7.0','proj-2-dl':'Download Report ↓',
+    'pers-proj-num':'06 · Side Projects','pers-proj-title':'My<br><em>side projects</em>',
+    'pp-template-tag':'Project · Year','pp-template-title':'Project Title',
+    'pp-template-desc':'Short description — what it does, what technologies were used, and what impact it had.',
+    'prof-num':'07 · Hobbies','prof-title':'Online<br><em>profiles</em>',
+    'contact-num':'08 · Contact','contact-title':"Let's<br><em>connect</em>",
+    'contact-sub':'MSc Computational Science · BSc Computer Science',
+    'contact-label-email':'Email','contact-label-web':'Website',
+    'footer-location':'Amsterdam, Netherlands',
+  },
+  nl: {
+    'nav-about':'Over mij','nav-education':'Opleiding','nav-skills':'Vaardigheden',
+    'nav-experience':'Ervaring','nav-projects':'Projecten','nav-profiles':'Profielen','nav-contact':'Contact',
+    'hero-issue':'Portfolio · 2024',
+    'hero-desc':'MSc Computationele Wetenschappen. Gespecialiseerd in machine learning, data engineering &amp; data science.',
+    'hero-btn-cv':'CV downloaden','hero-btn-explore':'Bekijk werk →',
+    'about-num':'01 · Over mij','about-title':'Hallo, ik ben<br><em>Kwan</em>',
+    'about-p1':'Ik ben een afgestudeerde in computationele wetenschappen met een flexibele, resultaatgerichte instelling en een echte passie voor data. Mijn werk richt zich op machine learning, data engineering en data science.',
+    'about-p2':'Ik gedij goed bij complexe problemen, leer graag en vind echte voldoening in het bouwen van oplossingen met meetbare impact.',
+    'about-label-based':'Woonplaats','about-label-email':'E-mail',
+    'edu-num':'02 · Opleiding','edu-title':'Academische<br><em>achtergrond</em>',
+    'edu-desc-1':'Computationele modellen in de natuur-, sociale en economische wetenschappen. Data science, wiskundige analyse en stochastische simulaties.',
+    'edu-desc-2':'Computersystemen &amp; netwerken, datastructuren, besturingssystemen, lineaire algebra.',
+    'edu-desc-3':'NG/NT STEM-curriculum. Technasium-specialisatie: projecten voor externe opdrachtgevers, presentaties en teamwork.',
+    'skills-num':'03 · Vaardigheden','skills-title':'Technisch<br><em>arsenaal</em>',
+    'skills-prog-label':'Programmeren &amp; Tools','skills-lang-label':'Talen',
+    'lang-dutch':'Nederlands','lang-english':'Engels','lang-french':'Frans','lang-cantonese':'Kantonees',
+    'lang-level-native':'Moedertaal','lang-level-fluent':'Vloeiend','lang-level-basic-1':'Basis','lang-level-basic-2':'Basis',
+    'exp-num':'04 · Ervaring','exp-title':'Loopbaan<br><em>overzicht</em>',
+    'exp-afm-dur':'heden','exp-afm-role':'Data Scientist','exp-afm-loc':'Amsterdam, Nederland',
+    'exp-afm-desc':'Werkzaam binnen het toezicht op de sector Accountancy, in nauwe samenwerking met toezichthouders en andere teams. Bouw van LLM-applicaties en voorspellende modellen, regelmatig presentaties aan stakeholders en actief in een DevOps-team voor de oplevering van productieklare dataproducten.',
+    'exp-1-dur':'7 maanden','exp-1-role':'Data Science Stagiair','exp-1-loc':'Amsterdam, Nederland',
+    'exp-1-desc':"Werkzaam binnen het Data Science cluster van BC_M&amp;MI. Belangrijke bijdrager aan project 'Plutus' — het voorspellen van de volatiliteit van stablecoins met econometrische en ML-modellen. Leverde EDA, presentaties en nam deel aan workshops.",
+    'exp-2-dur':'5 jaar','exp-2-role':'Bijlesdocent Middelbare School','exp-2-loc':'Amstelveen / Aalsmeer, Nederland',
+    'exp-2-desc':'Hielp middelbare scholieren bij STEM-vakken, waarbij onvoldoendes regelmatig werden omgezet naar voldoendes.',
+    'exp-3-dur':'3 jaar','exp-3-role':'Ober','exp-3-loc':'Amstelveen, Nederland',
+    'exp-3-desc':'Uitstekende klantenservice verleend en samengewerkt met de keuken tijdens drukke momenten.',
+    'proj-num':'05 · Projecten','proj-title':'Geselecteerd<br><em>werk</em>',
+    'proj-1-tag':'MSc Scriptie · DNB · 2024','proj-1-title':'De Stabiliteit van Stablecoins',
+    'proj-1-desc':'Voorspelling van de volatiliteit van USDT &amp; USDC met tijdreeksen, econometrische en ML-modellen. Grootschalige data engineering en exploratieve analyse in samenwerking met De Nederlandsche Bank.',
+    'proj-1-grade':'Cijfer: 8,0','proj-1-dl':'Download Scriptie ↓',
+    'proj-2-tag':'BSc Scriptie · Leiden · 2022','proj-2-title':'Hoe win je bij Dammen?',
+    'proj-2-desc':'Het damspel en de Minimax- en MCTS-algoritmen volledig van scratch gebouwd in C++. Gedetailleerde vergelijking van de speelstijlen van beide algoritmen.',
+    'proj-2-grade':'Cijfer: 7,0','proj-2-dl':'Download Scriptie ↓',
+    'pers-proj-num':"06 · Nevenprojecten",'pers-proj-title':'Mijn<br><em>nevenprojecten</em>',
+    'pp-template-tag':'Project · Jaar','pp-template-title':'Projecttitel',
+    'pp-template-desc':'Korte beschrijving — wat het doet, welke technologieën zijn gebruikt en wat de impact was.',
+    'prof-num':"07 · Hobby's",'prof-title':'Online<br><em>profielen</em>',
+    'contact-num':'08 · Contact','contact-title':'Neem<br><em>contact op</em>',
+    'contact-sub':'MSc Computationele Wetenschappen · BSc Informatica',
+    'contact-label-email':'E-mail','contact-label-web':'Website',
+    'footer-location':'Amsterdam, Nederland',
+  }
+};
 
-			</div>
-			<div class="container">
-				<div class="project" style="background-color: white;">
-					<div class="project-details">
-						<h3>MSc scriptie: The stability of stablecoins: Are these coins stable or is the stability just a
-							flip of the coin? </h3>
-						<br>
-						<p>In samenwerking met De Nederlandsche Bank heb ik gewerkt aan het project 'Plutus', dat probeert de volatiliteit van de stablecoins USDT en USDC te voorspellen, door middel van tijdreeksvoorspellingen met zowel econometrische als machine learning-modellen. 
-							Voordat ik de modellen implementeerde, moest ik de gegevens uit grote cryptodatasets grondig voorbereiden. Dit omvatte het zelfstandig bepalen welke kenmerken ik wilde gebruiken, zoals tijdsintervallen, muntsoorten, datavolume en andere relevante factoren. Daarnaast is er verkennende data-analyse uitgevoerd met als doel meer uitleg te bieden binnen de data en de relaties tussen de kenmerken.
-							<br>
-							<br>
-							De code is geïmplementeerd in Python, en de analyse is uitgevoerd met behulp van bibliotheken zoals Scikit-learn, TensorFlow en Pandas.</p>
-							<p>
-							<br>
-							Begeleider: Dr. Ronald Heijmans <br>
-							Examinator: Dr. Eric Pauwels <br>
-							Cijfer: 8.0
-							</p>
-							
-						</p>
-					</div>
-					<div class="image-container">
-						<a href="./assets/download/Master_thesis_report_Kwan_Lie.pdf" download>
-							<img src="assets/images/projects/dnb.png" alt="Picture 1" class="overlap-image">
-						</a>
-					</div>
-				</div>
-				<div class="project" style="background-color: white;">
-					<div class="project-details">
-						<h3>BSc scriptie: How to win in Checkers? </h3>
-						<br>
-						<p> Mijn bachelor thesis richtte zich op het spel dammen, specifiek het ontwikkelen en implementeren van het spel samen met de Minimax- en Monte Carlo Tree Search (MCTS) algoritmen. Zowel het spel als de algoritmen zijn volledig vanaf nul gecodeerd, zonder gebruik te maken van externe pakketten. Daarnaast is er een gedetailleerde vergelijking van de speelstijlen van de twee algoritmen uitgevoerd om te bepalen welke beter presteert.
-						<br>
-						<br>
-						The code is geïmplementeerd in C++ <br>
-						Begeleider & Examinator: Dr Aske Plaat <br>
-						Grade: 7.0	
-					
-					</p>
-					</div>
-					<div class="image-container">
-						<a href="./assets/download/Bachelor_thesis_report_Kwan_Lie.pdf" download>
-							<img src="assets/images/projects/leiden.png" alt="Picture 1" class="overlap-image">
-						</a>
-					</div>
-				</div>
+let currentLang = localStorage.getItem('kwan-lang') || 'en';
 
-								
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('kwan-lang', lang);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const val = T[lang][el.dataset.i18n];
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const val = T[lang][el.dataset.i18nHtml];
+    if (val !== undefined) el.innerHTML = val;
+  });
+  document.getElementById('lang-btn').textContent = lang === 'en' ? 'NL' : 'EN';
+  document.querySelectorAll('[data-lang]').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+}
 
-							</ul>
-						</div><!--.main-timeline-->
-					</div><!--.experience-content-->
-			</div>
+applyLang(currentLang);
 
-		</section><!--/.experience-->
-		<!--experience end -->
+document.getElementById('lang-btn').addEventListener('click', () => {
+  applyLang(currentLang === 'en' ? 'nl' : 'en');
+});
+document.querySelectorAll('[data-lang]').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
 
-		<!--profiles start -->
-		<section id="profielen" class="profiles">
-			<div class="profiles-details">
-				<div class="section-heading text-center">
-					<h2>profiles</h2>
-					<h3 class="header-description">In mijn vrije tijd vind ik het leuk om spelletjes te spelen of te sporten. Hier zijn een aantal profielen om mijn progressie te tracken :)</h3>
-				</div>
-				<div class="container">
-					<div class="profiles-content">
-						<div class="row">
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href="https://www.chess.com/member/kwannoo"><img src="assets/images/profiles/pawn.png" class='profile_icons'></a>
-										<div class="profile-icon-name">Chess</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href="https://www.chess.com/member/kwannoo"><img src="assets/images/profiles/pawn.png" class='profile_icons_white'></i></a>
-											<div class="profile-icon-name">chess</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href="https://tracker.gg/valorant/profile/riot/Kwannoo%231234/overview"><img src="assets/images/profiles/valorant.png" class='profile_icons'></a>
-										<div class="profile-icon-name">Valorant</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href="https://tracker.gg/valorant/profile/riot/Kwannoo%231234/overview"><img src="assets/images/profiles/valorant.png" class='profile_icons_white'></i></a>
-											<div class="profile-icon-name">Valorant</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href="https://mijnknltb.toernooi.nl/player-profile/2a8179da-f88b-4b26-9921-8f34c748af4f"><img src="assets/images/profiles/knltb.webp" class='profile_icons'></a>
-										<div class="profile-icon-name">Tennis</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href="https://mijnknltb.toernooi.nl/player-profile/2a8179da-f88b-4b26-9921-8f34c748af4f"><img src="assets/images/profiles/knltb.webp" class='profile_icons_white'></i></a>
-											<div class="profile-icon-name">Tennis</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3">
-								<div class="single-profile">
-									<div class="profile-txt">
-										<a href="https://myanimelist.net/profile/Kwannoo"><img src="assets/images/profiles/MAL.png" class='profile_icons'></a>
-										<div class="profile-icon-name">MAL</div>
-									</div>
-									<div class="single-profile-overlay">
-										<div class="profile-txt">
-											<a href="https://myanimelist.net/profile/Kwannoo"><img src="assets/images/profiles/MAL.png" class='profile_icons_white'></i></a>
-											<div class="profile-icon-name">MAL</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</section><!--/.profiles-->
-		<!--profiles end -->
-
-		
-
-
-		<!--contact start -->
-		<section id="contact" class="contact">
-			<div class="section-heading text-center">
-				<h2>contacteer mij</h2>
-			</div>
-			<div class="container">
-				<div class="contact-content">
-					<div class="row">
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-						<img src="assets/images/about/profile_tennis.jpg" alt="profile_image" style="margin-top: 100px;">
-
-						</div><!--/.col -->
-						<div class="col-md-offset-1 col-md-5 col-sm-6">
-							<div class="single-contact-box">
-								<div class="contact-adress">
-									<div class="contact-add-head">
-										<h3>Kwan Sing Lie</h3>
-										<p>MSc Computational Science, BSc Computer Science</p>
-									</div>
-									<div class="contact-add-info">
-										<div class="single-contact-add-info">
-											<h3>email</h3>
-											<p>kwansing2000@hotmail.nl</p>
-										</div>
-										<div class="single-contact-add-info">
-											<h3>website</h3>
-											<p>https://kwannoo.github.io/portfoliokwan/</p>
-										</div>
-									</div>
-								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
-									<ul>
-										<a href="https://www.linkedin.com/in/kwan-lie-169834157/">
-											<i  class="fa fa-linkedin" aria-hidden="true"></i>
-										</a>
-									</li><!-- / li -->
-									<li>
-										<a href="https://www.instagram.com/kwannoo_">
-											<i  class="fa fa-instagram" aria-hidden="true"></i>
-										</a>
-									</li><!-- / li -->
-									<li>
-										<a href="https://github.com/Kwannoo">
-											<i  class="fa fa-github" aria-hidden="true"></i>
-										</a>
-									</li><!-- / li -->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
-							</div><!--/.single-contact-box-->
-						</div><!--/.col-->
-					</div><!--/.row-->
-				</div><!--/.contact-content-->
-			</div><!--/.container-->
-
-		</section><!--/.contact-->
-		<!--contact end -->
-
-		<!--footer-copyright start-->
-		<footer id="footer-copyright" class="footer-copyright">
-			<div class="container">
-				<div class="hm-footer-copyright text-center">
-					<p>
-						&copy; copyright Kwannoo. </a>
-					</p><!--/p-->
-				</div><!--/.text-center-->
-			</div><!--/.container-->
-
-			<div id="scroll-Top">
-				<div class="return-to-top">
-					<i class="fa fa-angle-up " id="scroll-top" ></i>
-				</div>
-				
-			</div><!--/.scroll-Top-->
-			
-        </footer><!--/.footer-copyright-->
-		<!--footer-copyright end-->
-		
-		<!-- Include all js compiled plugins (below), or include individual files as needed -->
-
-		<script src="assets/js/jquery.js"></script>
-        
-        <!--modernizr.min.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-		
-		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
-		
-		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
-		
-		<!-- jquery.sticky.js -->
-		<script src="assets/js/jquery.sticky.js"></script>
-		
-		<!-- for progress bar start-->
-
-		<!-- progressbar js -->
-		<script src="assets/js/progressbar.js"></script>
-
-		<!-- appear js -->
-		<script src="assets/js/jquery.appear.js"></script>
-
-		<!-- for progress bar end -->
-
-		<!--owl.carousel.js-->
-        <script src="assets/js/owl.carousel.min.js"></script>
-
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-		
-        
-        <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
-        
-    </body>
-	
+document.querySelectorAll('[data-color]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.documentElement.style.setProperty('--accent', btn.dataset.color);
+    document.querySelectorAll('[data-color]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+document.querySelectorAll('[data-bg]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.documentElement.style.setProperty('--bg', btn.dataset.bg);
+    document.querySelectorAll('[data-bg]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
 </html>
